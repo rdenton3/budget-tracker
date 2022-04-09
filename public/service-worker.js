@@ -5,7 +5,10 @@ const CACHE_NAME = APP_PREFIX + VERSION;
 const FILES_TO_CACHE = [
     "./index.html",
     "./css/styles.css",
-    "./js/index.js"
+    "./js/index.js",
+    "./js/idb.js",
+    "/",
+    "./manifest.json"
   ];
 
   self.addEventListener('fetch', function (e) {
@@ -19,7 +22,6 @@ const FILES_TO_CACHE = [
           console.log('file is not cached, fetching : ' + e.request.url)
           return fetch(e.request)
         }
-  
         // You can omit if/else for console.log & put one line below like this too.
         // return request || fetch(e.request)
       })
